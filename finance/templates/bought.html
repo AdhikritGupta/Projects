@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h1>Enter the stock you wish to buy!</h1>
+    <form action="/buy" method="post">
+        <label for="quantity">Enter Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1">
+        <input type="submit">
+    </form>
+{% endblock %}

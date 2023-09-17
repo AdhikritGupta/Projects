@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="center" style="width: 100%;">
+        <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Total</th>
+        </tr>
+        {% for title in titles %}
+            <tr>
+            <td>{{title.name}}</td>
+            <td>{{title.symbol}}</td>
+            <td>{{title.shares}}</td>
+            <td>{{title.price|usd}}</td>
+            <td>{{(title.price*title.shares)|usd}}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{total|usd}}</td>
+            </tr>
+    </table>
+    <br>
+    {% if titles %}
+        <h2>Available Cash: {{titles[0].cash|usd}}</h2>
+    {% endif %}
+
+{% endblock %}

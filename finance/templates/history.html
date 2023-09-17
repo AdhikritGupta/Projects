@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table class="center" style="width: 60%;">
+        <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Type</th>
+        </tr>
+        {% for stock in stocks %}
+            <tr>
+            <td>{{stock.name}}</td>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.shares}}</td>
+            <td>{{stock.type}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

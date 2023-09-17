@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <h1>Enter the stock you wish to sell!</h1>
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <label for="shares">Choose a Share:</label>
+            <select class="form-select mx-auto w-auto" name="symbol" type="text">
+                <!-- <option disabled selected>Symbol</option> -->
+                {% for stock in stocks %}
+                    <option value="{{stock.name}}">{{stock.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <label for="shares">Enter Quantity:</label>
+        <input autocomplete="off" class="form-control mx-auto w-auto" min="0" name="shares" placeholder="Shares" type="text">
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+    <br>
+    <h3>Available Cash: {{cash[0]["cash"]|usd}}</h3>
+    <h2>Available Stocks</h2>
+    <table class="center" style="width: 60%;">
+        <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Shares</th>
+        </tr>
+        {% for stock in stocks %}
+            <tr>
+            <td>{{stock.name}}</td>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.shares}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
