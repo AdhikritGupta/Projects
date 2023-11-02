@@ -1,6 +1,6 @@
 # Polynomial Sum Calculator
 ## Adhikrit Gupta
-#### Video:  <URL HERE>
+#### Video:  <[Click_me](https://youtu.be/v_i0UHS-Dzs)>
 #### Description: The following is a program written in C programming language which calculates the sum of two polynomials entered by the user using Linked List.
 #### Firstly, the structure to be used in linked list as a node is declared having two integer variables, one for storing the coeeficient term and one for storing the power term. It also contains a third pointer variable which points to a structure of the same type which is used to store the address of the next node so that all the nodes of the linked list are linearly connected.
 #### Next, All functions to be used in the program are declared which are namely:-<br>**create** <br>**display**<br>**insert**<br>**add**
